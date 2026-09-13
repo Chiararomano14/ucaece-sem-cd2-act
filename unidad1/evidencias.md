@@ -24,7 +24,7 @@ Respuesta:
 
 **Respuesta del modelo:**
 
-Se necesita consultar con la empresa para determinar el vehículo más adecuado para una carga pequeña dentro de CABA.
+Para una carga pequeña dentro de CABA se puede utilizar un vehículo tipo chasis, dependiendo también del peso y volumen de la mercadería.
 
 ## Consulta 2
 
@@ -50,7 +50,7 @@ Respuesta:
 
 **Respuesta del modelo:**
 
-Para pedir un presupuesto de envío debes informar:
+Para solicitar un presupuesto para un envío, por favor indique:
 
 - Origen  
 - Destino  
@@ -58,7 +58,9 @@ Para pedir un presupuesto de envío debes informar:
 - Peso aproximado  
 - Volumen  
 - Cantidad de pallets  
-- Fecha estimada del servicio.
+- Fecha estimada del servicio  
+
+Con esta información podremos cotizarle de manera precisa.
 
 ## Consulta 3
 
@@ -84,4 +86,4 @@ Respuesta:
 
 **Respuesta del modelo:**
 
-Sí, la empresa puede realizar un servicio a otra provincia. Para cotizar el viaje se deben considerar el destino, la distancia, el tipo de vehículo y las características de la carga.
+Sí, la empresa puede realizar un servicio a otra provincia.

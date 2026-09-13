@@ -1,5 +1,38 @@
 # Unidad 1 — Foundation Models: prompt engineering + PEFT
 
+## Implementación realizada
+
+### Caso de uso
+
+Se desarrolló un asistente inteligente de atención al cliente para una empresa de logística. 
+El objetivo es responder consultas frecuentes de clientes relacionadas con los servicios de 
+transporte, tipos de vehículos, zonas de cobertura y datos necesarios para solicitar una cotización.
+
+### Foundation Model seleccionado
+
+Se seleccionó un modelo de pesos abiertos de la familia LLaMA, accedido mediante la API de Groq.
+
+Esta alternativa fue elegida por su bajo costo para la implementación de la actividad, la 
+posibilidad de tener mayor control sobre la privacidad en futuros despliegues y su flexibilidad 
+para realizar adaptaciones o personalizaciones.
+
+### Estrategia de adaptación
+
+Se implementó Prompt Engineering avanzado mediante la técnica de few-shot prompting.
+
+El modelo recibe ejemplos de consultas y respuestas relacionadas con el caso de uso antes de 
+procesar una nueva consulta. Además, el prompt incluye instrucciones para evitar generar 
+información que no pueda deducirse de los ejemplos proporcionados.
+
+### Ejecución
+
+Para ejecutar la solución es necesario configurar previamente las variables de entorno en el 
+archivo `.env`:
+
+```env
+MODEL_PROVIDER=groq
+GROQ_API_KEY=tu_api_key
+
 Plantilla base para el componente práctico (consignas 6 a 10) del Trabajo Práctico
 Individual de la Unidad 1, Seminario de Ciencia de Datos II. Este README explica cómo
 completar tu entrega individual a partir de esta plantilla.
