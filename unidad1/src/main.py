@@ -27,9 +27,9 @@ CONSTRUIR_PROMPT = construir_prompt_few_shot
 
 # Reemplazar por al menos 3 consultas relacionadas con tu propio caso de uso (consigna 1).
 CONSULTAS_DE_EJEMPLO = [
-    "¿Cómo cancelo una suscripción activa?",
-    "¿Qué medios de pago aceptan?",
-    "¿Puedo cambiar mi plan en cualquier momento?",
+    "¿Qué vehículo me conviene para transportar una carga pequeña dentro de CABA?",
+    "¿Qué datos tengo que informar si quiero pedir un presupuesto para un envío?",
+    "¿La empresa puede realizar un servicio a otra provincia?",
 ]
 
 
