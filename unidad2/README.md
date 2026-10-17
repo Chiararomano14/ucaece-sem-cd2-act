@@ -189,9 +189,7 @@ completamente opcional: el resto del pipeline funciona igual sin tocarlo.
    `outputs/`.
 2. En el documento entregado (Word/PDF con las consignas 1 a 6), incluí el enlace a tu
    repositorio.
-3. Este mismo README ya resume el dataset, el atributo sensible y las métricas
-   antes/después una vez que corriste el script con tu configuración — no hace falta que
-   agregues nada más acá salvo que quieras ampliar algún punto.
+3. La sección «Trabajo práctico — Unidad 2» presenta el dataset utilizado, el atributo sensible, las métricas obtenidas y las instrucciones de ejecución.
 
 ## Estructura del repositorio
 
@@ -224,4 +222,59 @@ unidad2/
         ├── factory.py                # get_mitigator(nombre) según MITIGATION_METHOD
         ├── exponentiated_gradient.py
         └── threshold_optimizer.py
-```
+``` 
+## Trabajo práctico — Unidad 2
+
+### Caso de estudio
+Se analizó el caso de Amazon y los sesgos de género detectados en su sistema experimental de selección de personal.
+
+### Dataset utilizado
+- Nombre: Predicting Hiring Decisions in Recruitment Data.
+- Fuente: Kaggle.
+- Archivo: data/recruitment_data.csv
+- Cantidad de registros: 1.500.
+- Tipo de datos: sintéticos.
+- Variable objetivo: HiringDecision.
+- Atributo sensible: Gender.
+- Clase positiva: 1 (contratado).
+
+El dataset fue aprobado por el profesor y se utilizó para simular un proceso de selección de personal.
+
+### Modelo y herramientas
+Se utilizó un modelo de clasificación basado en regresión logística.
+
+- Scikit-learn: entrenamiento del modelo.
+- Fairlearn: evaluación y mitigación de diferencias de equidad.
+- SHAP: explicación de las predicciones.
+
+### Resultados
+
+| Métrica | Modelo original | Modelo mitigado |
+|---|---|---|
+| Exactitud | 0.873 | 0.867 |
+| Demographic Parity Difference | 0.033 | 0.055 |
+| Equalized Odds Difference | 0.032 | 0.046 |
+
+La técnica ExponentiatedGradient no logró mejorar las métricas de equidad en esta ejecución. Las diferencias entre grupos aumentaron ligeramente y la exactitud disminuyó.
+
+### Ejecución
+Desde la carpeta unidad2:
+
+1. Instalar las dependencias:
+   pip install -r requirements.txt
+
+2. Crear el archivo .env a partir de .env.example.
+
+3. Configurar las variables:
+   DATASET_PATH=data/recruitment_data.csv
+   TARGET_COLUMN=HiringDecision
+   SENSITIVE_ATTRIBUTE=Gender
+   POSITIVE_LABEL=1
+   MITIGATION_METHOD=exponentiated_gradient
+   FAIRNESS_CONSTRAINT=demographic_parity
+
+4. Ejecutar:
+   python -m src.main
+
+### Evidencias
+Los resultados se encuentran en evidencias.md y los gráficos generados en la carpeta outputs/.
