@@ -13,10 +13,10 @@
 
 ## Consigna 7: Experimentación y registro con MLflow
 
-| Corrida | max_depth | accuracy | f1_macro |
-|---------|-----------|----------|----------|
-| arbol_max_depth_1 | 1 | 0.667 | 0.556 |
-| arbol_max_depth_3 | 3 | 0.978 | 0.978 |
+| Corrida           | max_depth | accuracy | f1_macro |
+|------------------ |-----------|----------|----------|
+| arbol_max_depth_1 |     1     |   0.667  |   0.556  |
+| arbol_max_depth_3 |     3     |   0.978  |   0.978  |
 
 **Versión registrada:** modelo-u3 v__ (@champion), corrida con max_depth = 3
 
@@ -30,12 +30,12 @@
 
 ## Consigna 8: Serving con FastAPI
 
-| Entrada | Respuesta de la API |
-|---------|---------------------|
-| Setosa (5.1, 3.5, 1.4, 0.2) | HTTP 200 - setosa (clase 0) |
+| Entrada                         | Respuesta de la API             |
+|---------------------------------|---------------------------------|
+| Setosa (5.1, 3.5, 1.4, 0.2)     | HTTP 200 - setosa (clase 0)     |
 | Versicolor (6.0, 2.7, 4.5, 1.4) | HTTP 200 - versicolor (clase 1) |
-| Virginica (6.9, 3.1, 5.8, 2.2) | HTTP 200 - virginica (clase 2) |
-| Entrada inválida ("abc") | HTTP 422 - Error de validación |
+| Virginica (6.9, 3.1, 5.8, 2.2)  | HTTP 200 - virginica (clase 2)  |
+| Entrada inválida ("abc")        | HTTP 422 - Error de validación  |
 
 ![Documentación de la API](capturas/8_docs.png)
 
@@ -57,9 +57,9 @@
 
 | Plantilla | tasa_exito | tokens_totales | latencia_media_s |
 |-----------|------------|----------------|------------------|
-| zero_shot |            |                |                  |
-| few_shot  |            |                |                  |
+| zero_shot |    100%    |    1090        |      0.339s      |
+| few_shot  |    100%    |    1150        |      0.281s      |
 
 ![LLMOps](capturas/opcional_llmops.png)
 
-> Escribí acá tu interpretación (2 a 3 líneas).
+> En la comparación realizada, ambas estrategias alcanzaron una tasa de éxito del 100 %. Zero-shot utilizó menos tokens, mientras que few-shot presentó una latencia promedio ligeramente menor. En este caso, las dos estrategias funcionaron correctamente, aunque few-shot necesitó más tokens por incluir ejemplos en el prompt.
